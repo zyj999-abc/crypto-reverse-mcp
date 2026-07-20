@@ -1,0 +1,61 @@
+{
+  "name": "crypto-reverse-mcp",
+  "version": "0.1.0",
+  "description": "Crypto reverse engineering MCP server: detect crypto algorithms, identify obfuscation, reconstruct algorithms, generate SDK, bypass anti-debug. The missing 'last mile' of JS reverse engineering.",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "cryptography",
+    "reverse-engineering",
+    "js-reverse",
+    "crypto",
+    "aes",
+    "rsa",
+    "sm2",
+    "sm3",
+    "sm4",
+    "deobfuscation",
+    "anti-debug"
+  ],
+  "type": "module",
+  "main": "build/src/index.js",
+  "bin": {
+    "crypto-reverse-mcp": "build/src/index.js"
+  },
+  "files": [
+    "build/src",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('build', {recursive: true, force: true})\"",
+    "build": "npm run clean && tsc",
+    "typecheck": "tsc --noEmit",
+    "start": "npm run build && node build/src/index.js",
+    "prepublishOnly": "npm run build",
+    "test": "node --test tests/"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "author": "",
+  "homepage": "https://github.com/zyj999-abc/crypto-reverse-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyj999-abc/crypto-reverse-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zyj999-abc/crypto-reverse-mcp/issues"
+  },
+  "mcpName": "io.github.zyj999-abc/crypto-reverse-mcp"
+}
